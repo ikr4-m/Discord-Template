@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node index.ts",
     "dev": "nodemon --exec \"npm run lint && npm start dev\"",
-    "lint": "eslint ./src/**/*.ts ./src/**/*.js",
+    "lint": "eslint ./src/**/*.ts ./src/**/*.js -e ./node_modules",
     "test": "npm run lint"
   },
   "author": "skymunn",
