@@ -3,6 +3,6 @@ language: node_js
 node:
   "lts/*"
 
-install: npm i -g eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
+install: npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
 
 script: npm run test
