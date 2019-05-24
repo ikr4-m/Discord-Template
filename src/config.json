@@ -1,0 +1,10 @@
+{
+  "bot_name": "tempeh-rework",
+  "bot_prefix": "tp.",
+  "bot_dev_prefix": "tpd.",
+  "embed_color": "0xf48042",
+  "owners_id": [
+    "379616881272946688"
+  ],
+  "server_private": true
+}

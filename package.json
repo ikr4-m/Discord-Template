@@ -1,0 +1,41 @@
+{
+  "name": "discord-template",
+  "version": "1.0.0",
+  "description": "Discord template for you in TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "dev": "nodemon --exec \"npm run lint && npm start dev\"",
+    "lint": "eslint ./src/**/*.ts ./src/**/*.js",
+    "test": "npm run lint"
+  },
+  "author": "skymunn",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "nodemon": "^1.18.11",
+    "typescript": "^3.4.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/axios": "^0.14.0",
+    "@types/string-template": "^1.0.2",
+    "@types/timer-machine": "^1.1.1",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "axios": "^0.18.0",
+    "chalk": "^2.4.2",
+    "del": "^4.1.1",
+    "dotenv": "^7.0.0",
+    "eslint": "^5.16.0",
+    "express": "^4.16.4",
+    "string-template": "^1.0.0",
+    "timer-machine": "^1.1.0",
+    "ts-node": "^8.1.0"
+  }
+}
