@@ -1,8 +1,0 @@
-language: node_js
-
-node:
-  "lts/*"
-
-install: npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
-
-script: npm run test
