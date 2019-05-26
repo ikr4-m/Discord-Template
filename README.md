@@ -7,6 +7,9 @@
   <a href='https://coveralls.io/github/skymunn/discord-ts-template?branch=master'>
     <img src='https://coveralls.io/repos/github/skymunn/discord-ts-template/badge.svg?branch=master' alt='Coverage Status' />
   </a>
+  <a href='https://circleci.com/gh/skymunn/discord-ts-template/tree/master'>
+    <img src='https://circleci.com/gh/skymunn/discord-ts-template/tree/master.svg?style=svg' alt='CircleCI Status' />
+  </a>
 </p>
 
 *Coming soon*
