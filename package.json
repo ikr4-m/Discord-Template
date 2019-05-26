@@ -6,8 +6,8 @@
   "scripts": {
     "start": "ts-node index.ts",
     "dev": "nodemon --exec \"npm run lint && npm start dev\"",
-    "lint": "eslint ./src/**/*.ts ./src/**/*.js -e ./node_modules",
-    "test": "eslint ./src/**/*.ts -e ./node_modules"
+    "lint": "eslint \"src/**/*.+(ts|js)\"",
+    "test": "npm run lint"
   },
   "author": "skymunn",
   "license": "MIT",
