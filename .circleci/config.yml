@@ -18,8 +18,8 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
       
-      # Install dependencies and Codecov
-      - run: npm install && npm i -g codecov
+      # Install dependencies
+      - run: npm install
 
       - save_cache:
           paths:
@@ -27,5 +27,5 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: npm test && codecov
+      - run: npm test
 
