@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node index.ts",
-    "dev": "nodemon --exec \"npm run lint && npm start dev\"",
+    "dev": "nodemon --exec \"npm start dev\"",
     "lint": "eslint \"src/**/*.+(ts|js)\"",
     "test": "npm run lint"
   },

@@ -1,7 +1,13 @@
+/**
+ * Game status for Discord.
+ * This plugin is not required, you can change it or
+ * delete it.
+ */
+
+import { Client } from '@type/Bot';
 import * as config from '../../../config.json';
 import * as status from '../../../assets/db/status.json';
 import strTemplate from 'string-template';
-import { Client } from '../../../Bot';
 
 const prefix = process.env.DEV ? config['bot_dev_prefix'] : config['bot_prefix'];
 

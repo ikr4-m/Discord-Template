@@ -16,16 +16,16 @@ if (!config['server_private']) {
   });
 
   shards.on('launch', shards => {
-    log.info(`[SHARDS#${shards.id}] Your bot is live!`);
+    log.info('ENGINE', `[SHARDS#${shards.id}] Your bot is live!`);
   });
 
   shards.on('message', (shards, message) => {
-    log.info(`[SHARDS#${shards.id}] ${message._eval} | ${message._result}`);
+    log.info('ENGINE', `[SHARDS#${shards.id}] ${message._eval} | ${message._result}`);
   });
 
   shards.spawn();
 }
 else {
-  log.info('Initialize');
+  log.info('ENGINE', 'Initialize');
   import('./engine');
 }

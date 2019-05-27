@@ -1,12 +1,13 @@
 import * as Config from './config.json';
+import { ConsoleTag } from './@types/Console';
 import chalk from 'chalk';
 
 const log = {
   getTime: () => `[${new Date().toISOString()}]`,
   pid: process.pid,
-  executor: (value: string, name: string, level: string) => {
+  executor: (frame: ConsoleTag, value: string, name: string, level: string) => {
     let entry = value.split('\n');
-    let finVal: string;
+    let finVal: string = '';
 
     if (entry.length > 1) {
       entry.forEach(txt => {
@@ -18,18 +19,27 @@ const log = {
     }
 
     console.log(
-      `${chalk.red(log.getTime())} ${name}/${log.pid} ${level}: ${chalk.cyan(value)}`
+      `${chalk.red(log.getTime())} ${name}/${log.pid} ${level}: ${chalk.green(`[${frame}]`)} ${chalk.cyan(value)}`
     )
   }
 }
 
 let bot_name = Config['bot_name'];
-export default {
-  name: bot_name,
-  info: (value: string) => {
-    log.executor(value, bot_name, chalk.blue(' INFO'));
-  },
-  error: (value: string) => {
-    log.executor(value, bot_name, chalk.redBright('ERROR'));
+class ConsoleLocal {
+
+  name: string;
+  info: (frame: ConsoleTag, value: string) => void;
+  error: (frame: ConsoleTag, value: string) => void;
+
+  constructor(name: string) {
+    this.name = name;
+    this.info = (frame: ConsoleTag, value: string) => {
+      log.executor(frame, value, this.name, chalk.blue(' INFO'));
+    }
+    this.error = (frame: ConsoleTag, value: string) => {
+      log.executor(frame, value, this.name, chalk.blue('ERROR'));
+    }
   }
 }
+
+export default new ConsoleLocal(bot_name);

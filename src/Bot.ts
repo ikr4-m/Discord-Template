@@ -4,7 +4,6 @@ import log from './console';
 
 /**
  * Extender Client for Tempeh.
- * JANGAN DIGANGGU KECUALI ADA UPDATE BARU.
  */
 class ExtendedClient extends Client {
 
@@ -28,7 +27,4 @@ class ExtendedClient extends Client {
   }
 }
 
-export {
-  ExtendedClient as Client,
-  Message
-}
+export { ExtendedClient as Client }
