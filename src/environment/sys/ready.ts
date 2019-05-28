@@ -9,7 +9,7 @@ export default (client: Client) => {
   let Timer = new timer();
   Timer.start();
 
-  const events = readdirSync('./src/events/plugin/ready').map(e => e.split('.')[0]);
+  const events = readdirSync('./src/environment/plugin/ready').map(e => e.split('.')[0]);
   const cate: any = {};
 
   events.forEach(event => {

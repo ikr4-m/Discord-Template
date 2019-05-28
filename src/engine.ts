@@ -6,7 +6,7 @@ const newClient = new Client({
 });
 
 // Register all the handler
-require('./handler/events').default(newClient);
+require('./environment/events').default(newClient);
 
 // Login
 newClient.login(
