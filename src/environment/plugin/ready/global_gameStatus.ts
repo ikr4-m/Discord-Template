@@ -9,11 +9,9 @@ import * as config from '../../../config.json';
 import * as status from '../../../assets/db/status.json';
 import strTemplate from 'string-template';
 
-const prefix = process.env.DEV ? config['bot_dev_prefix'] : config['bot_prefix'];
-
 export default (client: Client) => {
   // Initialize template
-  let gameStatus = (value: string) => `${prefix}help | ${value}`;
+  let gameStatus = (value: string) => `${client.prefix}help | ${value}`;
 
   // Is debug mode
   if (process.env.DEV) {

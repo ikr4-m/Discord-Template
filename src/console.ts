@@ -19,7 +19,7 @@ const log = {
     }
 
     console.log(
-      `${chalk.red(log.getTime())} ${name}/${log.pid} ${level}: ${chalk.green(`[${frame}]`)} ${chalk.cyan(value)}`
+      `${chalk.red(log.getTime())} ${name}/${log.pid} ${level}: ${chalk.green(`[${frame}]`)} ${chalk.cyan(finVal)}`
     )
   }
 }

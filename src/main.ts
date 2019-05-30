@@ -1,7 +1,6 @@
 import log from './console';
 import { ShardingManager } from 'discord.js';
 import * as config from './config.json';
-import path from 'path';
 
 // START SHARDING MANAGER //
 
@@ -10,7 +9,7 @@ import path from 'path';
 // gapake sharding.
 
 if (!config['server_private']) {
-  const shards = new ShardingManager(path.join(__dirname, 'engine'), {
+  const shards = new ShardingManager('./src/engine', {
     token: process.env.TOKEN,
     totalShards: 'auto'
   });

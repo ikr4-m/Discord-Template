@@ -31,3 +31,12 @@ export interface ModuleCommand {
   strict: string[] | null;
   cmds: string[];
 }
+
+export interface GlobalConfiguration {
+  bot_name: string;
+  bot_prefix: string;
+  bot_dev_prefix: string;
+  embed_color: string;
+  owners_id: string[];
+  server_private: boolean;
+}

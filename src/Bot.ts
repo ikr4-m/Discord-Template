@@ -1,5 +1,5 @@
 import { Client, Collection } from 'discord.js';
-import { CommandComponent } from '@type/Bot';
+import { CommandComponent, GlobalConfiguration } from '@type/Bot';
 import * as config from './config.json';
 import log from './console';
 
@@ -15,7 +15,7 @@ class ExtendedClient extends Client {
   public color: string;
   public log: object;
   public prefix: string;
-  public config: any;
+  public config: GlobalConfiguration;
 
   constructor(opt: import('discord.js').ClientOptions | undefined) {
     super(opt);
@@ -25,7 +25,7 @@ class ExtendedClient extends Client {
 
     this.color = config.embed_color;
     this.log = log;
-    this.prefix = config.bot_prefix;
+    this.prefix = process.env.DEV ? config.bot_dev_prefix : config.bot_prefix;
     this.config = config;
   }
 }
