@@ -56,7 +56,7 @@ export default (client: Client, message: Message) => {
   // Execute command
   try {
     if (!commandFile) return;
-    commandFile.run(client, message, args);
+    commandFile.run(client, message, args.splice(1));
   }
   catch (error) {
     log.error('MESSAGE', error);

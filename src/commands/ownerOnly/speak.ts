@@ -1,4 +1,4 @@
-import { Client, Message, CommandComponent } from '@type/Bot';
+import { Client, Message, CommandComponent, Channel, TextChannel, DMChannel, GroupDMChannel } from '@type/Bot';
 
 export default class Ping implements CommandComponent {
   help = {
@@ -17,5 +17,25 @@ export default class Ping implements CommandComponent {
     // ONLY OWNER CAN DO THIS MOTHERFUCKER
     if (!client.config.owners_id.includes(message.author.id)) return;
 
+    let channelID = args[0];
+    let text = args.splice(1).join(' ');
+
+    let channel: TextChannel =
+      channelID === 'this' ? message.channel : <any>client.channels.get(channelID);
+
+    channel.send(text)
+      .then(() => {
+        if (channelID !== 'this') {
+          message.channel.send(`Your message was send in <#${channelID}>`);
+        }
+        else {
+          message.delete();
+        }
+      })
+      .catch((e) => {
+        message.channel.send(e.message);
+      });
+
+    console.log(text)
   }
 }
