@@ -1,4 +1,5 @@
-import { Client, Collection, Message } from 'discord.js';
+import { Client, Collection } from 'discord.js';
+import { CommandComponent } from '@type/Bot';
 import * as config from './config.json';
 import log from './console';
 
@@ -7,23 +8,25 @@ import log from './console';
  */
 class ExtendedClient extends Client {
 
-  public commands: Collection<any, any>;
-  public helps: Collection<any, any>;
-  public aliases: Collection<any, any>;
+  public commands: Collection<string, CommandComponent>;
+  public aliases: Collection<string, string>;
+  public helps: Collection<string, {}>;
 
-  protected color: string;
+  public color: string;
   public log: object;
-  protected prefix: string;
+  public prefix: string;
+  public config: any;
 
   constructor(opt: import('discord.js').ClientOptions | undefined) {
     super(opt);
     this.commands = new Collection();
-    this.helps = new Collection();
     this.aliases = new Collection();
+    this.helps = new Collection();
 
     this.color = config.embed_color;
     this.log = log;
     this.prefix = config.bot_prefix;
+    this.config = config;
   }
 }
 

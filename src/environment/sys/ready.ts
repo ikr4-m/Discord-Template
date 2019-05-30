@@ -33,5 +33,5 @@ export default (client: Client) => {
     log.info('EVENT', `Loaded ${cate[ele]['count']} from handler/events/${ele}.`);
   });
 
-  log.info('EVENT', `Loaded ${events.length} plugin from Ready event.`);
+  log.info('EVENT', `Loaded ${events.length} plugin from Ready event. (${Timer.time()} ms)`);
 }
