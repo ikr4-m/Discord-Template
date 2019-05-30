@@ -18,7 +18,8 @@ export default async (client: Client) => {
 
         log.info('MODULE', `Fetch ${files.length - 1} command${(files.length - 1) > 1 ? 's' : ''} from [${category}]`);
         files.forEach(file => {
-          if (!file.endsWith('.ts')) return;
+          // Support JavaScript ES6 too!
+          if (!file.endsWith('.ts') || !file.endsWith('.js')) return;
 
           // Input commands
           let command: CommandComponent = new (require(`../commands/${category}/${file.split('.')[0]}`).default)();
