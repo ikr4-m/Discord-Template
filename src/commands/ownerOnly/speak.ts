@@ -1,6 +1,6 @@
-import { Client, Message, CommandComponent, Channel, TextChannel, DMChannel, GroupDMChannel } from '@type/Bot';
+import { Client, Message, CommandComponent, TextChannel } from '@type/Bot';
 
-export default class Ping implements CommandComponent {
+export default class GlobalOwnerSpeak implements CommandComponent {
   help = {
     name: 'speak',
     description: 'Speak as the bot',
