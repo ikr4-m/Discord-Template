@@ -34,4 +34,8 @@ export default (client: Client) => {
   });
 
   log.info('EVENT', `Loaded ${events.length} plugin from Ready event. (${Timer.time()} ms)`);
+
+  // console.log(client.commands);
+  // console.log(client.helps);
+  // console.log(client.aliases);
 }

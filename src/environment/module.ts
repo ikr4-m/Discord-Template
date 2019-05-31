@@ -19,7 +19,7 @@ export default async (client: Client) => {
         log.info('MODULE', `Fetch ${files.length - 1} command${(files.length - 1) > 1 ? 's' : ''} from [${category}]`);
         files.forEach(file => {
           // Support JavaScript ES6 too!
-          if (!file.endsWith('.ts') || !file.endsWith('.js')) return;
+          if (!file.endsWith('.ts') && !file.endsWith('.js')) return;
 
           // Input commands
           let command: CommandComponent = new (require(`../commands/${category}/${file.split('.')[0]}`).default)();
@@ -39,9 +39,4 @@ export default async (client: Client) => {
       })
     })
   })
-  // setTimeout(() => {
-  //   console.log(client.commands);
-  //   console.log(client.helps);
-  //   console.log(client.aliases);
-  // }, 5000);
 }
