@@ -1,4 +1,4 @@
-<h1 align="center">Discord-TypeScript-Template</h1>
+<h1 align="center">Discord-Template</h1>
 
 <p align="center">
   <a href="#">
@@ -15,4 +15,6 @@
   </a>
 </p>
 
-*Coming soon, bugnya banyak banget bet...*
+Discord Template that written in TypeScript, but you can make a command with ES6 too.
+
+*Documentation coming soon...*
