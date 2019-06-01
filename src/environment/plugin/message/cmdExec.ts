@@ -16,7 +16,7 @@ export default (client: Client, message: Message) => {
   let commandFile = client.commands.get(cmd) || client.commands.get(<any>client.aliases.get(cmd));
 
   // If deveelopment
-  if (process.env.DEV) {
+  if (process.env.DEV === 'true') {
     if (message.content.startsWith(prefix) && !client.config.owners_id.includes(message.author.id)) {
       return message.channel.send(`:wave: | Hello <@${message.author.id}>, this bot is under maintenanced.`);
     }
@@ -36,7 +36,7 @@ export default (client: Client, message: Message) => {
   }
 
   // Register member
-  let member = message.member;
+  let member = message.author;
   let now = Date.now();
   let timestamps = cooldown.get(commandFile.help.name);
   let cooldownAmount = (commandFile.config.cooldown || 5) * 1000;
@@ -62,19 +62,36 @@ export default (client: Client, message: Message) => {
     log.error('MESSAGE', error);
   }
   finally {
-    log.info(
-      'MESSAGE',
-      strTemplate(
-        '{tag}[{id}] using {command} command!\nGuild:\t{guildName} | {guildLocation}\nGuild_ID:\t{guildID}',
-        {
-          tag: message.author.tag,
-          id: message.author.id,
-          command: cmd,
-          guildName: message.guild.name,
-          guildLocation: message.guild.region,
-          guildID: message.guild.id
-        }
+    // If in textChannel
+    if (message.guild) {
+      log.info(
+        'MESSAGE',
+        strTemplate(
+          '{tag}[{id}] using {command} command!\nGuild:\t{guildName} | {guildLocation}\nGuild_ID:\t{guildID}',
+          {
+            tag: message.author.tag,
+            id: message.author.id,
+            command: cmd,
+            guildName: message.guild.name,
+            guildLocation: message.guild.region,
+            guildID: message.guild.id
+          }
+        )
       )
-    )
+    }
+    // If in directMessage
+    else {
+      log.info(
+        'MESSAGE',
+        strTemplate(
+          '{tag}[{id}] using {command} command!\nIn your Direct Message.',
+          {
+            tag: message.author.tag,
+            id: message.author.id,
+            command: cmd
+          }
+        )
+      )
+    }
   }
 }

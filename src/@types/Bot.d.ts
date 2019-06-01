@@ -10,7 +10,7 @@ export class Client extends Bot.Client { }
 // Command component
 export interface CommandComponent {
 
-  run: (client: Bot.Client, message: DiscordJS.Message, args: string[]) => Promise<void>;
+  run: (client: Bot.Client, message: DiscordJS.Message, args: string[]) => Promise<void | DiscordJS.Message | DiscordJS.Message[]>;
 
   config: {
     aliases: string[];
@@ -28,7 +28,7 @@ export interface CommandComponent {
 export interface ModuleCommand {
   name: string;
   hide: boolean;
-  strict: string[] | null;
+  strict: string[];
   cmds: string[];
 }
 
