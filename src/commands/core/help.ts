@@ -90,7 +90,7 @@ export default class HelpCommand implements CommandComponent {
         .setAuthor(`${client.prefix}${commandFetch.help.name} command usage.`)
         .setTitle(
           commandFetch.config.aliases.length > 0
-            ? `${client.prefix}${commandFetch.config.aliases.join(` >> ${client.prefix}`)}`
+            ? `Aliases: ${client.prefix}${commandFetch.config.aliases.join(` >> ${client.prefix}`)}`
             : 'No aliases found!'
         )
         .setDescription(commandFetch.help.description)
