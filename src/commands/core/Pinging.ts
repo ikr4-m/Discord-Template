@@ -1,6 +1,6 @@
 import { Client, Message, CommandComponent } from '@type/Bot';
 
-export default class Ping implements CommandComponent {
+export default class Pinging implements CommandComponent {
   help = {
     name: 'ping',
     description: 'p p p p p p p p',

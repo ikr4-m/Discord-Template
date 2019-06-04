@@ -2,7 +2,7 @@ import { Client, Message, CommandComponent, Collection, ModuleCommand } from '@t
 import { RichEmbed } from 'discord.js';
 import stringTemplate from 'string-template';
 
-export default class HelpCommand implements CommandComponent {
+export default class HelpOfCommand implements CommandComponent {
   help = {
     name: 'help',
     description: 'The list of the command in here!',
