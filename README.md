@@ -15,6 +15,10 @@
   </a>
 </p>
 
-Discord Template that written in TypeScript, but you can make a command with ES6 too.
+<p align="center">
+  <img alt="Code Example" src="./carbon.png">
+</p>
+
+<p align="center">Discord Template that written in TypeScript, but you can make a command with ES6 too.</p>
 
 *Documentation coming soon...*
