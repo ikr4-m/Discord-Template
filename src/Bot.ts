@@ -2,7 +2,7 @@ import { Client, Collection } from 'discord.js';
 import { CommandComponent, GlobalConfiguration, ModuleCommand } from '@type/Bot';
 import * as config from './config.json';
 import log from './console';
-import Constant from './environment/constant';
+import Constant from './assets/ts/constant';
 
 /**
  * Extender Client for Tempeh.
