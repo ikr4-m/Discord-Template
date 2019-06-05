@@ -94,7 +94,7 @@ export default class HelpOfCommand implements CommandComponent {
             : 'No aliases found!'
         )
         .setDescription(commandFetch.help.description)
-        .addField('Usage', `\`\`\`${commandFetch.help.usage}\`\`\``, false);
+        .addField('Usage', `**${client.prefix}${commandFetch.help.usage}**`, false);
     }
 
     // Send it with mention

@@ -19,11 +19,23 @@ export default class GlobalOwnerSpeak implements CommandComponent {
 
     let channelID = args[0];
     let text = args.splice(1).join(' ');
+    let atc = message.attachments;
+    let attachment: string[] = [];
+
+    atc.forEach(val => {
+      attachment.push(val.url);
+    })
+
+    if (!channelID) {
+      if (!text || !attachment) {
+        return message.reply(client.constant.usage(client.prefix, this.help.usage));
+      }
+    }
 
     let channel: TextChannel =
       channelID === 'this' ? message.channel : <any>client.channels.get(channelID);
 
-    channel.send(text)
+    channel.send(text, { files: attachment })
       .then(() => {
         if (channelID !== 'this') {
           message.channel.send(`Your message was send in <#${channelID}>`);
@@ -35,7 +47,5 @@ export default class GlobalOwnerSpeak implements CommandComponent {
       .catch((e) => {
         message.channel.send(e.message);
       });
-
-    console.log(text)
   }
 }
