@@ -12,12 +12,12 @@ class ExtendedClient extends Client {
   public commands: Collection<string, CommandComponent>;
   public aliases: Collection<string, string>;
   public helps: Collection<string, ModuleCommand>;
-  public constant: Constant;
+  public readonly constant: Constant;
 
-  public color: string;
-  public log: object;
-  public prefix: string;
-  public config: GlobalConfiguration;
+  public readonly color: string;
+  public readonly log: object;
+  public readonly prefix: string;
+  public readonly config: GlobalConfiguration;
 
   constructor(opt: import('discord.js').ClientOptions | undefined) {
     super(opt);

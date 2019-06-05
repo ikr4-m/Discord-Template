@@ -66,7 +66,7 @@ export default class HelpOfCommand implements CommandComponent {
           // For me and all of member that cannot see the command
           if (category.hide === true) return;
           // For guild purposes
-          if (category.strict.includes(message.guild.id)) return;
+          if (!category.strict.includes(message.guild.id)) return;
         }
         // In DM
         else {

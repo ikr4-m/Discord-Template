@@ -67,14 +67,15 @@ export default (client: Client, message: Message) => {
       log.info(
         'MESSAGE',
         strTemplate(
-          '{tag}[{id}] using {command} command!\nGuild:\t{guildName} | {guildLocation}\nGuild_ID:\t{guildID}',
+          '{tag}[{id}] using {command} command!\nGuild:\t{guildName} | {guildLocation}\nGuild_ID:\t{guildID}\nChannel_ID:\t{channelID}',
           {
             tag: message.author.tag,
             id: message.author.id,
             command: cmd,
             guildName: message.guild.name,
             guildLocation: message.guild.region,
-            guildID: message.guild.id
+            guildID: message.guild.id,
+            channelID: message.channel.id
           }
         )
       )
