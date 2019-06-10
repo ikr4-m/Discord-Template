@@ -1,8 +1,9 @@
-import { Client, Collection } from 'discord.js';
+import { Client, Collection, ClientOptions } from 'discord.js';
 import { CommandComponent, GlobalConfiguration, ModuleCommand } from '@type/Bot';
 import * as config from './config.json';
 import log from './console';
 import Constant from './assets/ts/constant';
+import TemporaryCollection from './assets/ts/temporary';
 
 /**
  * Extender Client for Tempeh.
@@ -12,6 +13,8 @@ class ExtendedClient extends Client {
   public commands: Collection<string, CommandComponent>;
   public aliases: Collection<string, string>;
   public helps: Collection<string, ModuleCommand>;
+  public temp: TemporaryCollection;
+
   public readonly constant: Constant;
 
   public readonly color: string;
@@ -19,11 +22,13 @@ class ExtendedClient extends Client {
   public readonly prefix: string;
   public readonly config: GlobalConfiguration;
 
-  constructor(opt: import('discord.js').ClientOptions | undefined) {
+  constructor(opt?: ClientOptions) {
     super(opt);
     this.commands = new Collection();
     this.aliases = new Collection();
     this.helps = new Collection();
+    this.temp = new TemporaryCollection();
+
     this.constant = new Constant();
 
     this.color = config.embed_color;

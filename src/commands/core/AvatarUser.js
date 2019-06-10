@@ -1,4 +1,4 @@
-import { Client, Message, RichEmbed } from 'discord.js';
+import { Client, Message, RichEmbed } from '../extend';
 
 export default class AvatarUser {
   help = {

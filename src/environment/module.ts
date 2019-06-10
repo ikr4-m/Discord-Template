@@ -10,7 +10,7 @@ export default async (client: Client) => {
     //
     // You can add more folder/file exception list
     // in exception_list array below.
-    let exception_list = ['plugin', 'README.md'];
+    let exception_list = ['plugin', 'template', 'extend.js'];
 
     if (err) throw err;
     log.info(
@@ -61,7 +61,7 @@ export default async (client: Client) => {
 
           //Input this command into module
           let help: any = client.helps.get(category);
-          help.cmds.push(command.help.name);
+          <ModuleCommand>help.cmds.push(command.help.name);
         })
       })
     })

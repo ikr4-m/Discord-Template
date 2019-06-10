@@ -8,7 +8,7 @@ export default class Pinging implements CommandComponent {
   }
 
   config = {
-    aliases: ['p', 'pong'],
+    aliases: ['pong'],
     cooldown: 5,
     direct_message: true
   }

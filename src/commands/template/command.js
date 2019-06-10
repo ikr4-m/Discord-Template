@@ -1,4 +1,4 @@
-import { Client, Message } from 'discord.js';
+import { Client, Message } from '../extend';
 
 export default class AvatarUser {
   help = {

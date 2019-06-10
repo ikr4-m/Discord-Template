@@ -5,7 +5,7 @@ Threadify.runner((_stream) => {
   require('dotenv').config();
   if (process.argv[2] === 'dev') {
     log.info("ENGINE", 'This bot in development mode!');
-    process.env.DEV = 'true';
+    process.env.DEV = 'dev';
     import('./src/main');
   }
   else {
