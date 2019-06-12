@@ -10,32 +10,20 @@ import TemporaryCollection from './assets/ts/temporary';
  */
 class ExtendedClient extends Client {
 
-  public commands: Collection<string, CommandComponent>;
-  public aliases: Collection<string, string>;
-  public helps: Collection<string, ModuleCommand>;
-  public temp: TemporaryCollection;
+  constructor(opt?: ClientOptions) { super(opt); };
 
-  public readonly constant: Constant;
+  public commands: Collection<string, CommandComponent> = new Collection();
+  public aliases: Collection<string, string> = new Collection();
+  public helps: Collection<string, ModuleCommand> = new Collection();
+  public temp: TemporaryCollection = new TemporaryCollection();
 
-  public readonly color: string;
-  public readonly log: object;
-  public readonly prefix: string;
-  public readonly config: GlobalConfiguration;
+  public readonly constant: Constant = new Constant();
 
-  constructor(opt?: ClientOptions) {
-    super(opt);
-    this.commands = new Collection();
-    this.aliases = new Collection();
-    this.helps = new Collection();
-    this.temp = new TemporaryCollection();
+  public readonly color: string = config['embed_color'];
+  public readonly log: object = log;
+  public readonly prefix: string = process.env.DEV ? config.bot_dev_prefix : config.bot_prefix;
+  public readonly config: GlobalConfiguration = config;
 
-    this.constant = new Constant();
-
-    this.color = config.embed_color;
-    this.log = log;
-    this.prefix = process.env.DEV ? config.bot_dev_prefix : config.bot_prefix;
-    this.config = config;
-  }
 }
 
 export { ExtendedClient as Client }
