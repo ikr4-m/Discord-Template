@@ -58,7 +58,15 @@ export default (client: Client, message: Message) => {
 
   // Execute command
   try {
+    // If commandFile is null, return
     if (!commandFile) return;
+
+    // If direct_message is false
+    if (commandFile.config.direct_message == false && !message.guild) {
+      return message.reply('You can not using this command in Direct Message!');
+    }
+
+    // Execute
     commandFile.run(client, message, args.splice(1));
   }
   catch (error) {

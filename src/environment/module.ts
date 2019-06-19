@@ -2,6 +2,7 @@ import { Client, CommandComponent, ModuleCommand } from '@type/Bot';
 import * as fs from 'fs';
 import log from '../console';
 import strTemplate from 'string-template';
+import path from 'path';
 
 export default async (client: Client) => {
   fs.readdir('./src/commands', (err, categories) => {
@@ -49,7 +50,16 @@ export default async (client: Client) => {
           if (!file.endsWith('.ts') && !file.endsWith('.js')) return;
 
           // Input commands
-          let command: CommandComponent = new (require(`../commands/${category}/${file.split('.')[0]}`).default)();
+          let filePhysic = file.split('.')[0];
+          let command: CommandComponent = new (require(`../commands/${category}/${filePhysic}`).default)();
+          // If the name file is not same as the class name, throw error ANOMALY_CLASS_FILENAME
+          if (<Object>command.constructor.name !== filePhysic) {
+            let errr = new Error();
+            errr.name = 'ANOMALY_CLASS_FILENAME';
+            errr.message = `[${filePhysic}] classname is not found in ${path.resolve(__dirname, `../commands/${category}/${file}`)}`;
+            throw errr;
+          }
+          // Insert command in collection after selective
           client.commands.set(command.help.name, command);
 
           // Input aliases
