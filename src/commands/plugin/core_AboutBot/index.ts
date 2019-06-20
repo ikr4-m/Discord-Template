@@ -24,7 +24,7 @@ export default class AboutBotPlugin {
     let ret: string = '';
     await this.getInfoPackageGithub(author, githubRepos)
       .then(res => {
-        if (typeof simplistic === "boolean" && simplistic === true) {
+        if (typeof simplistic === 'boolean' && simplistic === true) {
           ret = `${res.name} (v.${res.version})`;
         }
         else {
