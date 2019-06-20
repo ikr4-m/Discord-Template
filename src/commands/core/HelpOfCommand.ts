@@ -1,3 +1,10 @@
+/**
+ * This is the handler of help command.
+ * It is auto generated based from CommandComponent::config and
+ * CommandComponent::help.
+ * 
+ * You can change it with your style.
+ */
 import { Client, Message, CommandComponent, Collection, ModuleCommand } from '@type/Bot';
 import { RichEmbed } from 'discord.js';
 import stringTemplate from 'string-template';
@@ -76,24 +83,36 @@ export default class HelpOfCommand implements CommandComponent {
           if (category.strict.length > 0) return;
         }
 
-        embed.addField(category.name, `\`${category.cmds.join('` `')}\``, true)
+        embed.addField(category.name, `\`${category.cmds.join('` `')}\``, false)
       })
     }
     // Per command help
     else {
+      // Search command, if commands did not found, throw usage of the command.
       let _commandFetch = commands.get(commandInType);
       if (!_commandFetch)
         return message.reply(client.constant.usage(client.prefix, this.help.usage));
 
+      // Redeclare command that declare it.
       let commandFetch = <CommandComponent>_commandFetch;
+      // Make it in embed 
       embed
         .setAuthor(`${client.prefix}${commandFetch.help.name} command usage.`)
-        .setTitle(
+        .addField('Description', commandFetch.help.description, false)
+        .addField(
+          'Aliases',
           commandFetch.config.aliases.length > 0
-            ? `Aliases: ${client.prefix}${commandFetch.config.aliases.join(` >> ${client.prefix}`)}`
-            : 'No aliases found!'
+            ? `${client.prefix}${commandFetch.config.aliases.join(`, ${client.prefix}`)}`
+            : 'No aliases found!',
+          true
         )
-        .setDescription(commandFetch.help.description)
+        .addField(
+          'Direct Message?',
+          commandFetch.config.direct_message
+            ? 'Yes'
+            : 'No',
+          true
+        )
         .addField('Usage', `**${client.prefix}${commandFetch.help.usage}**`, false);
     }
 
