@@ -1,3 +1,10 @@
+/**
+ * Discord-Template
+ * (C) 2019 - All rights reserved.
+ *
+ * ConsolasMoon, but for Discord-Template.
+ */
+
 import * as Config from './config.json';
 import { ConsoleTag } from './@types/Console';
 import chalk from 'chalk';

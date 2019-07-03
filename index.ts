@@ -1,3 +1,10 @@
+/**
+ * Discord-Template
+ * (C) 2019 - All rights reserved.
+ * 
+ * The spawner of bot.
+ */
+
 import log from './src/console';
 import { Threadify } from 'synchronous-ify';
 

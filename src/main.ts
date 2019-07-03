@@ -1,3 +1,10 @@
+/**
+ * Discord-Template
+ * (C) 2019 - All rights reserved.
+ *
+ * Sharding manager for private and public server.
+ */
+
 import log from './console';
 import { ShardingManager } from 'discord.js';
 import * as config from './config.json';

@@ -2,7 +2,6 @@
   "name": "discord-template",
   "version": "1.0.0",
   "description": "Discord template for you in TypeScript.",
-  "main": "index.js",
   "scripts": {
     "start": "ts-node index.ts",
     "dev": "nodemon --exec \"npm start dev\"",

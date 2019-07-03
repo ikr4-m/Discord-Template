@@ -1,3 +1,11 @@
+/**
+ * Discord-Template
+ * (C) 2019 - All rights reserved.
+ *
+ * Defenition of this Bot.
+ * All you can see is the core of the bot.
+ */
+
 import { Client, Collection, ClientOptions } from 'discord.js';
 import { CommandComponent, GlobalConfiguration, ModuleCommand } from '@type/Bot';
 import * as config from './config.json';

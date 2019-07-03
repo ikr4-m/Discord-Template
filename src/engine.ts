@@ -1,3 +1,10 @@
+/**
+ * Discord-Template
+ * (C) 2019 - All rights reserved.
+ *
+ * Initial invoke for events and modules.
+ */
+
 import { Client } from './Bot';
 
 const newClient = new Client({

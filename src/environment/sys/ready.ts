@@ -35,6 +35,13 @@ export default (client: Client) => {
 
   log.info('EVENT', `Loaded ${events.length} plugin from Ready event. (${Timer.time()} ms)`);
 
+  // Get all the information about the server and shards
+  let info = `Loaded ${client.guilds.size} guilds`;
+  if (!(!client.shard)) {
+    info += ` and ${client.shard.count} shard${client.shard.count > 1 ? 's' : ''}`;
+  }
+  log.info('CLIENT', info);
+
   // console.log(client.commands);
   // console.log(client.helps);
   // console.log(client.aliases);
