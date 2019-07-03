@@ -11,7 +11,7 @@ export default class EvaluationCode implements CommandComponent {
   config = {
     aliases: ['aliases', 'here', 'folks'],
     cooldown: 5,
-    direct_message: true
+    direct_message: false
   }
 
   async run(client: Client, message: Message, args: string[]) {

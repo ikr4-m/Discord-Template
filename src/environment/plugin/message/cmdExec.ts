@@ -3,10 +3,11 @@
  * Do not delete this file.
  */
 
-import { Client, Message } from '@type/Bot';
+import { Client, Message, ModuleCommand, CommandComponent } from '@type/Bot';
 import { Collection } from 'discord.js';
 import log from '../../../console';
 import strTemplate from 'string-template';
+import { Threadify } from 'synchronous-ify';
 
 export default (client: Client, message: Message) => {
   let prefix = client.prefix;
@@ -58,16 +59,22 @@ export default (client: Client, message: Message) => {
 
   // Execute command
   try {
-    // If commandFile is null, return
-    if (!commandFile) return;
+    Threadify.runner((_stream) => {
+      // If commandFile is null, return
+      if (!commandFile) return;
 
-    // If direct_message is false
-    if (commandFile.config.direct_message == false && !message.guild) {
-      return message.reply('You can not using this command in Direct Message!');
-    }
+      // If direct_message is false
+      if (commandFile.config.direct_message == false && !message.guild) {
+        return message.reply('You can not using this command in Direct Message!');
+      }
 
-    // Execute
-    commandFile.run(client, message, args.splice(1));
+      // Execute
+      try {
+        commandFile.run(client, message, args.splice(1));
+      } catch (error) {
+        log.error('MESSAGE', error);
+      }
+    });
   }
   catch (error) {
     log.error('MESSAGE', error);
