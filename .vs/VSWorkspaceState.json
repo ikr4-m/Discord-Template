@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\@types",
+    "\\src\\commands",
+    "\\src\\commands\\core"
+  ],
+  "SelectedNode": "\\src\\commands\\core\\AvatarUser.js",
+  "PreviewInSolutionExplorer": false
+}

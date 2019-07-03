@@ -5,7 +5,7 @@ import strTemplate from 'string-template';
 import path from 'path';
 
 export default async (client: Client) => {
-  fs.readdir('./src/commands', (err, categories) => {
+  await fs.readdir('./src/commands', (err, categories) => {
 
     // Remove plugin folder in this list.
     //
@@ -72,8 +72,12 @@ export default async (client: Client) => {
           //Input this command into module
           let help: any = client.helps.get(category);
           <ModuleCommand>help.cmds.push(command.help.name);
+
+          log.info('EVENT', `${filePhysic}::static is imported!`);
         })
       })
+
+      log.info('EVENT', `Namespace Command\\${category} sucessfully loaded!`);
     })
   })
 }
