@@ -151,6 +151,7 @@ export default class ItWorks implements CommandComponent {
   }
 }
 ```
+*Ah iya, kami menyediakan template code/cheat sheet seperti ini di `src/commands/template`. Cek aja atuh*
 
 # Lisensi
 Template ini menggunakan lisensi GNU Affero General Public License v3.0. Apabila ada pelanggaran di dalamnya kami dapat menindak dengan tegas para pelanggar tersebut. Kode ini tertanda oleh `Ikramullah Latif <45F6D4DF8F571384>`.
