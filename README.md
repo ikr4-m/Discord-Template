@@ -40,6 +40,11 @@ Sehingga anda tidak usah takut apabila anda tidak bisa menggunakan TypeScript da
 
 **Kami tekankan untuk untuk pemula agar mempelajari dasarnya dulu [di sini](https://anidiots.guide) dikarenakan command ini mempunyai beberapa fungsi yang lumayan aneh**.
 
+# Berkontribusi Dalam Proyek Ini
+Bebas, kami sangat terbuka untuk segala hal kontribusi. Kami juga sangat butuh bantuan yang membangun bagi kami, kalian, dan para pengguna template ini. Kami rasa proyek ini masih butuh beberapa hal fitur/perbaikan yang mungkin kami lewatkan.
+
+Gunakan tab **Issues** untuk melaporkan/memberi ide kepada kami dan **Pull request** untuk memberikan beberapa sampel kalian agar kami uji coba sebagai fitur baru dari template ini.
+
 # Hirarki Template
 Dalam template ini mempunyai struktur aplikasi untuk menghandle keseluruhan sistem.
 ```
