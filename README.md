@@ -99,9 +99,9 @@ npm install
 }
 ```
 *Karena JSON dilarang menggunakan command di dalamnya, saya jelaskan di bagian ini:*
-  1. `name: string` = Menjelaskan nama kategori yang akan muncul di helper.
-  2. `hide: boolean` = Berikan tanda true apabila kategori ini akan disembunyikan kepada member pada command help nanti.
-  3. `strict: string[]` = Turunan langsung dari hide, apabila anda mengisi strict ini dengan ID server yang anda inginkan maka apabila command help dijalankan, maka penghuni server tersebut mengetahui isi command untuk command tersebut. Simpelnya, command special untuk server tertentu.
+* `name: string` = Menjelaskan nama kategori yang akan muncul di helper.
+* `hide: boolean` = Berikan tanda true apabila kategori ini akan disembunyikan kepada member pada command help nanti.
+* `strict: string[]` = Turunan langsung dari hide, apabila anda mengisi strict ini dengan ID server yang anda inginkan maka apabila command help dijalankan, maka penghuni server tersebut mengetahui isi command untuk command tersebut. Simpelnya, command special untuk server tertentu.
 
 4. Buat file baru dengan nama yang anda inginkan, dalam kasus ini ialah `ItWorks.ts`. Kemudian isi file tersebut dengan standar penulisan kode template kami seperti di bawah:
 ```ts
