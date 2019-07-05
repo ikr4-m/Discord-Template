@@ -85,7 +85,7 @@ export default (client: Client, message: Message) => {
       log.info(
         'MESSAGE',
         strTemplate(
-          '{tag}[{id}] using {command} command!\nGuild:\t{guildName} | {guildLocation}\nGuild_ID:\t{guildID}\nChannel_ID:\t{channelID}',
+          '[{shard}] {tag}[{id}] using {command} command!\nGuild:\t{guildName} | {guildLocation}\nGuild_ID:\t{guildID}\nChannel_ID:\t{channelID}',
           {
             tag: message.author.tag,
             id: message.author.id,
@@ -93,7 +93,8 @@ export default (client: Client, message: Message) => {
             guildName: message.guild.name,
             guildLocation: message.guild.region,
             guildID: message.guild.id,
-            channelID: message.channel.id
+            channelID: message.channel.id,
+            shard: client.shard.id
           }
         )
       )
@@ -103,11 +104,12 @@ export default (client: Client, message: Message) => {
       log.info(
         'MESSAGE',
         strTemplate(
-          '{tag}[{id}] using {command} command!\nIn your Direct Message.',
+          '[{shard}] {tag}[{id}] using {command} command!\nIn your Direct Message.',
           {
             tag: message.author.tag,
             id: message.author.id,
-            command: cmd
+            command: cmd,
+            shard: client.shard.id
           }
         )
       )

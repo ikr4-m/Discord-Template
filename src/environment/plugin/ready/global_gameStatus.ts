@@ -25,10 +25,8 @@ export default (client: Client) => {
   else {
     let statuses: string[] = [];
     statuses.push(strTemplate(status['user'], client.users.size));
-    if (!config['server_private']) {
-      statuses.push(strTemplate(status['channel'], client.channels.size));
-      statuses.push(strTemplate(status['server'], client.guilds.size));
-    }
+    statuses.push(strTemplate(status['channel'], client.channels.size));
+    statuses.push(strTemplate(status['server'], client.guilds.size));
     // Push random status
     status.addition.forEach(text => {
       statuses.push(text);

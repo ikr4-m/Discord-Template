@@ -38,5 +38,5 @@ export interface GlobalConfiguration {
   bot_dev_prefix: string;
   embed_color: string;
   owners_id: string[];
-  server_private: boolean;
+  // server_private: boolean;
 }

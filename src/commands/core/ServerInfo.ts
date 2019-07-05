@@ -65,6 +65,11 @@ export default class ServerInfo implements CommandComponent {
           ),
           true
         )
+        .addField(
+          'Shards',
+          !client.shard ? 'No shards' : client.shard.id,
+          true
+        )
         .addField('Server Owner', `${guild.owner.user.tag} (${guild.ownerID})`)
         .addField('Created On', Moment(guild.createdAt).format(client.constant.defaultMomentTemplate))
         .addField(
