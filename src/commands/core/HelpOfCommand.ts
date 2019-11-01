@@ -120,7 +120,7 @@ export default class HelpOfCommand implements CommandComponent {
             ? `${client.prefix}${commandFetch.help.name} ${commandFetch.help.examples.join(`, ${client.prefix}${commandFetch.help.name}`)}`
             : 'No examples found!',
           true
-        )
+        );
     }
 
     // Send it with mention
