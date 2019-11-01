@@ -22,6 +22,7 @@ export interface CommandComponent {
     name: string;
     description: string;
     usage: string;
+    examples: string[];
   }
 }
 
