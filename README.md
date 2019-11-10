@@ -19,5 +19,8 @@
 
 # ON REWRITE, WE'LL BE BACK SOON!
 
-# Lisensi
-Template ini menggunakan lisensi GNU Affero General Public License v3.0. Apabila ada pelanggaran di dalamnya kami dapat menindak dengan tegas para pelanggar tersebut. Kode ini tertanda oleh `Ikramullah Latif <45F6D4DF8F571384>`.
+# Give me a coffee, please?
+This template isn't an AI handmake, but this template with love made from the humans brain. The human also need food to make a bunch of codes. So, if you like this project, [you can give me a cup of coffee in my PayPal here](https://www.paypal.me/sirienz).
+
+# License
+This project using GNU Affero General Public License v3.0. If a violation is found in it, we'll crack down according to local legal regulations. This project was signed by `Ikramullah Latif <45F6D4DF8F571384>`.
