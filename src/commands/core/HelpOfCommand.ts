@@ -113,7 +113,14 @@ export default class HelpOfCommand implements CommandComponent {
             : 'No',
           true
         )
-        .addField('Usage', `**${client.prefix}${commandFetch.help.usage}**`, false);
+        .addField('Usage', `**${client.prefix}${commandFetch.help.usage}**`, false)
+        .addField(
+          'Examples',
+          commandFetch.help.examples.length > 0
+            ? `${client.prefix}${commandFetch.help.name} ${commandFetch.help.examples.join(`, ${client.prefix}${commandFetch.help.name}`)}`
+            : 'No examples found!',
+          true
+        );
     }
 
     // Send it with mention
