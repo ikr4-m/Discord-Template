@@ -23,6 +23,8 @@
 
 *This documentation does not have an English version, but we will make it quickly.*
 
+[THIS VERSION IS OUTDATED](https://github.com/skymunn/Discord-Template/tree/master)
+
 # Apa ini?
 Discord-Template ini kegunaannya untuk kalian yang ingin membangun Discord agar lebih mudah dikarenakan semua fungsi penting yang biasanya telah diatur di awal pembuatan bot telah disediakan sedemikian rupa seperti Command Handler dan Event Listener.
 
