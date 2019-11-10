@@ -1,37 +1,18 @@
 {
   "name": "discord-template",
-  "version": "1.0.0",
-  "description": "Discord template for you in TypeScript.",
+  "version": "2.0.0-rewrite",
+  "description": "Discord Template for you.",
   "scripts": {
-    "start": "ts-node index.ts",
-    "dev": "nodemon --exec \"npm start dev\"",
-    "lint": "eslint \"src/**/*.+(ts|js)\"",
-    "test": "npm run lint"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "skymunn",
-  "license": "MIT",
-  "dependencies": {
-    "discord.js": "^11.4.2",
-    "nodemon": "^1.18.11",
-    "typescript": "^3.4.5"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skymunn/Discord-Template.git"
   },
-  "devDependencies": {
-    "@types/axios": "^0.14.0",
-    "@types/express": "^4.17.0",
-    "@types/string-template": "^1.0.2",
-    "@types/timer-machine": "^1.1.1",
-    "@typescript-eslint/eslint-plugin": "^1.9.0",
-    "@typescript-eslint/parser": "^1.9.0",
-    "axios": "^0.19.0",
-    "chalk": "^2.4.2",
-    "del": "^4.1.1",
-    "dotenv": "^7.0.0",
-    "eslint": "^5.16.0",
-    "express": "^4.16.4",
-    "moment": "^2.24.0",
-    "string-template": "^1.0.0",
-    "synchronous-ify": "github:jDevxyz/synchronous-ify",
-    "timer-machine": "^1.1.0",
-    "ts-node": "^8.1.0"
-  }
+  "author": "Ikramullah <github:skymunn>",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/skymunn/Discord-Template/issues"
+  },
+  "homepage": "https://github.com/skymunn/Discord-Template"
 }
