@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "sourceMap": true,
+      // "declaration": true,
+      "allowJs": true,
+      "outDir": "dist",
+      "strict": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+      "baseUrl": ".",
+      "paths": {
+        "@components/*": ["Components/*"],
+        "@scripts/*": ["Scripts/*"],
+        "@ty/*": ["@Types/*"]
+      }
+    },
+    "include": [
+      "./**/*.ts",
+      "./**/*.d.ts",
+      "./**/*.js"
+    ]
+  }

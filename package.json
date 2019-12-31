@@ -3,7 +3,11 @@
   "version": "2.0.0-rewrite",
   "description": "Discord Template for you.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node index.ts",
+    "dev": "nodemon --exec \"npm start dev\"",
+    "watch": "nodemon --exec \"standardx **/*.ts **/*.js\"",
+    "test": "standardx **/*.ts **/*.js",
+    "node": "ts-node"
   },
   "repository": {
     "type": "git",
@@ -23,10 +27,34 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/express": "^4.17.2",
+    "@types/module-alias": "^2.0.0",
+    "@types/string-format": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
     "axios": "^0.19.0",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "module-alias": "^2.2.2",
     "moment": "^2.24.0",
+    "standardx": "^5.0.0",
     "string-format": "^2.0.0"
+  },
+  "_moduleAliases": {
+    "@components": "./Components/",
+    "@scripts": "./Scripts/",
+    "@ty": "./@Types/"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error"
+    }
+  },
+  "standardx": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint/eslint-plugin"
+    ]
   }
 }
