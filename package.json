@@ -1,60 +1,35 @@
 {
   "name": "discord-template",
-  "version": "2.0.0-rewrite",
-  "description": "Discord Template for you.",
-  "scripts": {
-    "start": "ts-node index.ts",
-    "dev": "nodemon --exec \"npm start dev\"",
-    "watch": "nodemon --exec \"standardx **/*.ts **/*.js\"",
-    "test": "standardx **/*.ts **/*.js",
-    "node": "ts-node"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skymunn/Discord-Template.git"
-  },
-  "author": "Ikramullah <github:skymunn>",
-  "license": "AGPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/skymunn/Discord-Template/issues"
-  },
-  "homepage": "https://github.com/skymunn/Discord-Template",
-  "dependencies": {
-    "discord.js": "^12.2.0",
-    "nodemon": "^2.0.3",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.7.2"
+  "version": "2.0.0",
+  "description": "Discord framework/template for you.",
+  "engines": {
+    "node": ">= 12.13 <13"
   },
   "devDependencies": {
-    "@types/express": "^4.17.2",
-    "@types/module-alias": "^2.0.0",
-    "@types/string-format": "^2.0.0",
-    "@typescript-eslint/eslint-plugin": "^2.13.0",
-    "@typescript-eslint/parser": "^2.13.0",
-    "axios": "^0.19.2",
-    "console-stamp": "^0.2.9",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "module-alias": "^2.2.2",
-    "moment": "^2.24.0",
-    "standardx": "^5.0.0",
-    "string-format": "^2.0.0"
+    "@types/jest": "~26.0.0",
+    "@types/node": "~12.12.47",
+    "@typescript-eslint/eslint-plugin": "~3.2.0",
+    "@typescript-eslint/parser": "~3.2.0",
+    "eslint": "~7.2.0",
+    "eslint-config-prettier": "~6.11.0",
+    "eslint-plugin-jest": "~23.13.2",
+    "jest": "~26.0.1",
+    "rimraf": "~3.0.2",
+    "ts-jest": "~26.1.0",
+    "tsutils": "~3.17.0",
+    "typescript": "~3.9.4"
   },
-  "_moduleAliases": {
-    "@components": "./Components/",
-    "@scripts": "./Scripts/",
-    "@ty": "./@Types/"
+  "scripts": {
+    "clean": "rimraf coverage build tmp",
+    "build": "tsc -p tsconfig.release.json",
+    "build:watch": "tsc -w -p tsconfig.release.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
-  "eslintConfig": {
-    "rules": {
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": "error"
-    }
-  },
-  "standardx": {
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint/eslint-plugin"
-    ]
+  "author": "Ikramullah <github@skymunn>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "tslib": "~2.0.0"
   }
 }
