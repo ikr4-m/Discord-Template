@@ -21,5 +21,8 @@
     "prettier",
     "prettier/@typescript-eslint"
   ],
-  "rules": {}
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off",
+    "no-extra-semi": "error"
+  }
 }
