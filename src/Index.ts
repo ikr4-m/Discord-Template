@@ -1,5 +1,6 @@
 import Client from './App/Client'
 import LoadEvents from './Engine/LoadEvents'
+import LoadCommand from './Engine/LoadCommand'
 import ConsoleStamp from 'console-stamp'
 import DJSLight from 'discord.js-light'
 import 'dotenv/config'
@@ -17,5 +18,6 @@ const client = new DJSLight.Client({
 }) as Client
 
 LoadEvents(client)
+LoadCommand(client)
 
 client.login(process.env.TOKEN)
