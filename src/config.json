@@ -1,0 +1,12 @@
+{
+    "botPrefix": "bot!",
+    "cooldownDefault": 5,
+    "owner": [
+        "379616881272946688",
+        "709668494563868695"
+    ],
+    "gamePresence": [
+        "This is bot",
+        "I'm cool!"
+    ]
+}

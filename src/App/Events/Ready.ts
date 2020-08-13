@@ -6,7 +6,7 @@ export default class Ready extends Events {
     super('ready')
   }
 
-  public run(_client: Client): void {
+  public async run(_client: Client): Promise<any> {
     console.log('Gateway opened!')
   }
 }

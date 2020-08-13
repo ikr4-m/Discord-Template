@@ -7,7 +7,8 @@ export default class Debug extends Events {
     super('message')
   }
 
-  public run(_client: Client, message: Message): void {
+  public run(client: Client, message: Message): void {
     if (message.author.bot) return
+    if (!message.content.startsWith(client.config.botPrefix)) return
   }
 }
