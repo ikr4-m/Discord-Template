@@ -11,5 +11,6 @@ export interface CommandOptions {
 
 export interface CommandArguments {
   name: string
-  type: 'FLAG' | 'BLOCK'
+  type: 'FLAG' | 'BLOCK',
+  require: boolean
 }

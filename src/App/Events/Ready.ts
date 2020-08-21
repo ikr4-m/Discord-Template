@@ -6,7 +6,11 @@ export default class Ready extends Events {
     super('ready')
   }
 
-  public async run(_client: Client): Promise<any> {
+  public async run(client: Client): Promise<any> {
     console.log('Gateway opened!')
+
+    if (process.env.PRODUCTION === 'DEV') {
+      console.log(client.command)
+    }
   }
 }

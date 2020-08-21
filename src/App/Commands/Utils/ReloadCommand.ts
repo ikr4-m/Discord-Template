@@ -8,7 +8,7 @@ export default class Ping extends Command {
       name: 'reload',
       description: 'Reload command',
       args: [
-        { name: 'command', type: 'BLOCK' }
+        { name: 'command', type: 'BLOCK', require: true }
       ],
       example: 'reload ping',
       ownerOnly: true
