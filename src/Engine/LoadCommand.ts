@@ -9,6 +9,12 @@ export default (client: Client): void => {
     categories.forEach(category => {
       FS.readdir(Path.join(__dirname, `../App/Commands/${category}`), (err, commands) => {
         if (err) throw err
+
+        client.help.set(category, {
+          location: category,
+          command: []
+        })
+
         commands.forEach(async command => {
           const extName = command.split('.').pop()
           if (extName !== 'js') return
@@ -24,6 +30,11 @@ export default (client: Client): void => {
             aliases.forEach(alias => {
               client.alias.set(alias, commandName)
             })
+          }
+
+          const help = client.help.get(category)
+          if (help) {
+            help.command.push(`${command.split('.').slice(0, -1).join('.')}:${commandName}`)
           }
         })
       })

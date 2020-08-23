@@ -35,7 +35,7 @@ export default class Debug extends Events {
     }
 
     try {
-      command.run(client, message, args)
+      command.run(client, message, args.slice(1))
     } catch (error) {
       console.error(error)
       message.reply('something wrong with server. Try again later.')

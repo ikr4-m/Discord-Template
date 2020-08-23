@@ -11,6 +11,7 @@ export default class Ready extends Events {
 
     if (process.env.PRODUCTION === 'DEV') {
       console.log(client.command)
+      console.log(client.help)
     }
   }
 }
