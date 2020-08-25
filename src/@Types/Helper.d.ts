@@ -6,5 +6,5 @@ export interface Helper {
 
 export interface Module {
   name: string
-  hidden: true
+  hidden: boolean
 }

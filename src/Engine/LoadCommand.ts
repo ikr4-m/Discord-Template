@@ -11,13 +11,17 @@ export default (client: Client): void => {
       FS.readdir(Path.join(__dirname, `../App/Commands/${category}`), async (err, commands) => {
         if (err) throw err
 
+        client.help.set(category, {
+          location: category,
+          command: [],
+          module: {
+            name: '',
+            hidden: false
+          }
+        })
         FS.readFile(`./src/App/Commands/${category}/module.json`, (err, data) => {
           if (err) throw err
-          client.help.set(category, {
-            location: category,
-            command: [],
-            module: JSON.parse(data.toString()) as Module
-          })
+          client.help.get(category).module = JSON.parse(data.toString()) as Module
         })
 
         commands.forEach(async command => {

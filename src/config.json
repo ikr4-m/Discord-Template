@@ -8,5 +8,7 @@
     "gamePresence": [
         "This is bot",
         "I'm cool!"
-    ]
+    ],
+    "botColor": "0xa11dd1",
+    "botName": "Discord-Template"
 }
