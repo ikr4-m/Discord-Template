@@ -2,17 +2,22 @@ import FS from 'fs'
 import Path from 'path'
 import Client from '../App/Client'
 import Command from '../App/Command'
+import { Module } from '../@Types/Helper'
 
 export default (client: Client): void => {
   FS.readdir(Path.join(__dirname, '../App/Commands'), (err, categories) => {
     if (err) throw err
     categories.forEach(category => {
-      FS.readdir(Path.join(__dirname, `../App/Commands/${category}`), (err, commands) => {
+      FS.readdir(Path.join(__dirname, `../App/Commands/${category}`), async (err, commands) => {
         if (err) throw err
 
-        client.help.set(category, {
-          location: category,
-          command: []
+        FS.readFile(`./src/App/Commands/${category}/module.json`, (err, data) => {
+          if (err) throw err
+          client.help.set(category, {
+            location: category,
+            command: [],
+            module: JSON.parse(data.toString()) as Module
+          })
         })
 
         commands.forEach(async command => {
