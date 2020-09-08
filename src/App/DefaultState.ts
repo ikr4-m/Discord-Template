@@ -1,3 +1,7 @@
+/**
+ * You can use this state to store your global variable to your bot
+ * like storing music queue or something like that.
+ */
 export default {
   presence: {
     status: true,
