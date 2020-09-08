@@ -8,10 +8,10 @@ export default class Ping extends Command {
     super({
       name: 'help',
       description: 'List of the command in here',
-      usage: 'help ping',
       args: [
         { name: 'command', require: false, type: 'BLOCK' }
-      ]
+      ],
+      example: 'help ping'
     })
   }
 
@@ -49,7 +49,19 @@ export default class Ping extends Command {
     }
     // Strict help
     else {
-      //code
+      const getCmd = cmd.get(command)
+      if (!getCmd) return client.constant.usage(
+        message, this.options.name, this.options.args
+      )
+
+      const args = typeof getCmd.options.name !== 'string'
+        ? getCmd.options.name.slice(1)
+        : []
+      embed
+        .setAuthor(`${client.config.botPrefix}${command} command usage.`)
+        .addField('Description', getCmd.options.description)
+        .addField('Alias', args.length === 0 ? 'No aliases.' : `${client.config.botPrefix}${args.join(`, ${client.config.botPrefix}`)}`)
+        .addField('Example', `${client.config.botPrefix}${!getCmd.options.example ? command : getCmd.options.example}`)
     }
 
     message.channel.send(`<@!${message.author.id}>`, { embed: embed })
