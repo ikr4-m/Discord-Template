@@ -13,4 +13,4 @@ const client = new Client({
 LoadEvents(client)
 LoadCommand(client)
 
-client.login(process.env.TOKEN)
+client.login(process.env.PRODUCTION === 'DEV' ? process.env.TOKEN_DEV : process.env.TOKEN)

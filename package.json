@@ -12,6 +12,7 @@
     "@types/eventsource": "^1.1.2",
     "@types/jest": "~26.0.0",
     "@types/node": "~12.12.47",
+    "@types/umzug": "^2.2.3",
     "@typescript-eslint/eslint-plugin": "~3.2.0",
     "@typescript-eslint/parser": "~3.2.0",
     "console-stamp": "^0.2.9",
@@ -22,13 +23,14 @@
     "eslint-plugin-jest": "~23.13.2",
     "eventsource": "^1.0.7",
     "jest": "~26.0.1",
-    "knex": "^0.21.5",
     "moment": "^2.27.0",
     "rimraf": "~3.0.2",
+    "sequelize": "^6.3.5",
     "sqlite3": "^5.0.0",
     "ts-jest": "~26.1.0",
     "tsutils": "~3.17.0",
-    "typescript": "~3.9.4"
+    "typescript": "~3.9.4",
+    "umzug": "^2.3.0"
   },
   "scripts": {
     "clean": "rimraf coverage build tmp",
@@ -37,7 +39,9 @@
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "start": "node ./build/src/index.js"
+    "start": "node ./build/src/index.js",
+    "migrate:up": "node ./Database/migrations.js up",
+    "migrate:down": "node ./Database/migrations.js down"
   },
   "author": "Ikramullah <github@skymunn>",
   "license": "Apache-2.0",
