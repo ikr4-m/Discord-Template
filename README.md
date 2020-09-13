@@ -19,6 +19,27 @@
 
 # ON REWRITE, WE'LL BE BACK SOON!
 
+# How To Install
+Before installing this template, you'll need:
+1. NodeJS v14 or above
+2. Python v3.7.x (If you want to using SQLite)
+
+- For Windows User
+```
+git clone https://github.com/skymunn/Discord-Template
+cd Discord-Template
+npm config set python "path\to\python.exe"
+npm install --build-from-source=sqlite3
+```
+- For UNIX
+```
+git clone https://github.com/skymunn/Discord-Template
+cd Discord-Template
+npm install --build-from-source=sqlite3
+```
+
+*If you don't want to using SQLite, just remove sqlite3 & knex in package.json and remove build-from-source flag in npm install.*
+
 # Give me a coffee, please?
 This template isn't an AI handmade, but this template with love made from the human brain. The human also need food to make a bunch of codes. So, if you like this project, [you can give me a cup of coffee in my PayPal here](https://www.paypal.me/sirienz).
 

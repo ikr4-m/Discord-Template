@@ -22,8 +22,10 @@
     "eslint-plugin-jest": "~23.13.2",
     "eventsource": "^1.0.7",
     "jest": "~26.0.1",
+    "knex": "^0.21.5",
     "moment": "^2.27.0",
     "rimraf": "~3.0.2",
+    "sqlite3": "^5.0.0",
     "ts-jest": "~26.1.0",
     "tsutils": "~3.17.0",
     "typescript": "~3.9.4"
