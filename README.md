@@ -24,14 +24,14 @@ Before installing this template, you'll need:
 1. NodeJS v14 or above
 2. Python v3.7.x (If you want to using SQLite)
 
-- For Windows User
+#### For Windows User
 ```
 git clone https://github.com/skymunn/Discord-Template
 cd Discord-Template
 npm config set python "path\to\python.exe"
 npm install --build-from-source=sqlite3
 ```
-- For UNIX
+#### For UNIX
 ```
 git clone https://github.com/skymunn/Discord-Template
 cd Discord-Template
