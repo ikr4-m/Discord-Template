@@ -17,31 +17,45 @@
 
 <p align="center">Discord Template that written in TypeScript, but you can make a command with ES6 too.</p>
 
-# ON REWRITE, WE'LL BE BACK SOON!
+# Apa ini?
 
-# How To Install
-Before installing this template, you'll need:
+Discord-Template ini kegunaannya untuk kalian yang ingin membangun Discord agar lebih mudah dikarenakan semua fungsi penting yang biasanya telah diatur di awal pembuatan bot telah disediakan sedemikian rupa seperti Command Handler dan Event Listener.
+
+# Berkontribusi dalam Proyek Ini
+
+Bebas, kami sangat terbuka untuk segala hal kontribusi. Kami juga sangat butuh bantuan yang membangun bagi kami, kalian, dan para pengguna template ini. Kami rasa proyek ini masih butuh beberapa hal fitur/perbaikan yang mungkin kami lewatkan.
+
+Gunakan tab Issues untuk melaporkan/memberi ide kepada kami dan Pull request untuk memberikan beberapa sampel kalian agar kami uji coba sebagai fitur baru dari template ini.
+
+# Cara Pemasangan
+Sebelum menginstall template ini, kalian mesti mendownload tools di bawah ini:
 1. NodeJS v14 or above
-2. Python v3.7.x (If you want to using SQLite)
+2. Python v3.7.x (If you want to using Database)
+3. windows-build-tools in Windows or GCC in Windows (If you want to using Database)
 
-#### For Windows User
-```
-git clone https://github.com/skymunn/Discord-Template
-cd Discord-Template
-npm config set python "path\to\python.exe"
-npm install --build-from-source=sqlite3
-```
-#### For UNIX
-```
-git clone https://github.com/skymunn/Discord-Template
-cd Discord-Template
-npm install --build-from-source=sqlite3
+Setelah itu, tancap gas ke cara penginstallannya!
+1. Clone repo ini.
+2. Rename `.env.example` menjadi `.env` dan ganti tokennya jadi token bot kamu.
+3. Semisalnya, kamu gamau pake database, ikuti tutorial ini:
+  1. Buka `package.json` dan hapus `umzug`, `sequelize`, `@types/umzug`, dan `sqlite3` dependency.
+  2. Delete `Database` folder.
+  3. Delete `src/App/Events/CheckDatabaseConnection.ts` file.
+  4. Delete `src/App/Models` folder.
+4. Rename `Database/database-example.db` menjadi `database.db`.
+5. Eksekusi `npm install`
+6. Finally, execute `npm start` and happy coding!
+
+# Migrasi Database
+
+Migrasi di template ini menggunakan `umzug` dan `sequelize` sebagai alat bantu untuk migrasinya. Kalian bisa cek di `Database/migrations` untuk melihat contoh migrasi simpel yang kami buat. Untuk eksekusinya dapat dilakukan dengan cara:
+
+```shell
+$ npm run migrate:up      # Migrasi ke atas
+$ npm run migrate:down    # Migrasi ke bawah
 ```
 
-*If you don't want to using SQLite, just remove sqlite3 & knex in package.json and remove build-from-source flag in npm install.*
-
-# Give me a coffee, please?
-This template isn't an AI handmade, but this template with love made from the human brain. The human also need food to make a bunch of codes. So, if you like this project, [you can give me a cup of coffee in my PayPal here](https://www.paypal.me/sirienz).
+# Ada kopi?
+Template ini bukan buatan robot, tapi buatan manusia yang diciptakan dengan sepenuh hati dan sepenuh jiwa raga ini. [Kalau kasian liat gue ngoding sendiri, bolehlah kopinya segelas.](https://www.paypal.me/sirienz).
 
 # License
 This project using GNU Affero General Public License v3.0. If a violation is found in it, we'll crack down according to local legal regulations. This project was signed by `Ikramullah Latif <45F6D4DF8F571384>`.
