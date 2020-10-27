@@ -37,10 +37,10 @@ Setelah itu, tancap gas ke cara penginstallannya!
 1. Clone repo ini.
 2. Rename `.env.example` menjadi `.env` dan ganti tokennya jadi token bot kamu.
 3. Semisalnya, kamu gamau pake database, ikuti tutorial ini:
-  1. Buka `package.json` dan hapus `umzug`, `sequelize`, `@types/umzug`, dan `sqlite3` dependency.
-  2. Delete `Database` folder.
-  3. Delete `src/App/Events/CheckDatabaseConnection.ts` file.
-  4. Delete `src/App/Models` folder.
+    1. Buka `package.json` dan hapus `umzug`, `sequelize`, `@types/umzug`, dan `sqlite3` dependency.
+    2. Delete `Database` folder.
+    3. Delete `src/App/Events/CheckDatabaseConnection.ts` file.
+    4. Delete `src/App/Models` folder.
 4. Rename `Database/database-example.db` menjadi `database.db`.
 5. Eksekusi `npm install`
 6. Finally, execute `npm start` and happy coding!
