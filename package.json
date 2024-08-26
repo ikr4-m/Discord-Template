@@ -1,0 +1,10 @@
+{
+  "name": "Discord-Template",
+  "version": "1.0.0-rewrite",
+  "description": "Discord framework/template for you",
+  "scripts": {
+    "test": "tsx index.ts"
+  },
+  "author": "",
+  "license": "AGPLv3"
+}
