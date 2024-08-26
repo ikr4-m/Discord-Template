@@ -3,8 +3,20 @@
   "version": "1.0.0-rewrite",
   "description": "Discord framework/template for you",
   "scripts": {
-    "test": "tsx index.ts"
+    "start": "tsx ./src/index.ts"
   },
-  "author": "",
-  "license": "AGPLv3"
+  "author": "Ikramullah <contact@ikr4m.my.id>",
+  "type": "module",
+  "license": "AGPLv3",
+  "dependencies": {
+    "tsx": "^4.18.0"
+  },
+  "devDependencies": {
+    "@hazmi35/eslint-config": "^14.0.1",
+    "@tsconfig/node-lts": "^20.1.3",
+    "@types/node": "^22.5.0",
+    "discord.js": "^14.15.3",
+    "pino": "^9.3.2",
+    "pino-pretty": "^11.2.2"
+  }
 }

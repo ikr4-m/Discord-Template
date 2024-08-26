@@ -30,3 +30,4 @@ build/
 .DS_Store
 .env
 Database/database.db
+.vimsession
