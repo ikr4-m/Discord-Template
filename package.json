@@ -3,7 +3,8 @@
   "version": "1.0.0-rewrite",
   "description": "Discord framework/template for you",
   "scripts": {
-    "start": "tsx ./src/index.ts"
+    "start": "tsx --env-file ./.env ./src/index.ts",
+    "lint": "eslint ."
   },
   "author": "Ikramullah <contact@ikr4m.my.id>",
   "type": "module",

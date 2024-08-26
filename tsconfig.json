@@ -1,8 +1,10 @@
 {
   "extends": "@tsconfig/node-lts/tsconfig.json",
   "compilerOptions": {
+    "lib": ["DOM"],
     "strict": true,
     "baseUrl": "./src"
+    "typeRoots": ["./src/global.d.ts". "./src/types"]
   },
   "include": ["./src/**/*.ts"]
 }
